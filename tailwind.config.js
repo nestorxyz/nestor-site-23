@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -48,6 +50,9 @@ module.exports = {
           800: '#383838',
           900: '#313131',
         },
+      },
+      fontFamily: {
+        heebo: ['var(--font-heebo)', ...defaultTheme.fontFamily.mono],
       },
     },
   },
