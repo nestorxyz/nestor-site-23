@@ -2,6 +2,7 @@ import IntroCard from '@/components/IntroCard';
 import ProjectCard from '@/components/ProjectCard';
 import GithubCard from '@/components/GithubCard';
 import HexagonClip from '@/components/HexagonClip';
+import SocialCard from '@/components/SocialCard';
 
 export default function Home() {
   return (
@@ -46,7 +47,11 @@ export default function Home() {
         }
       />
 
-      <GithubCard className="col-span-6" />
+      <GithubCard className="col-span-6 h-52 md:h-64" />
+
+      <SocialCard social="twitter" className="col-span-2 h-52 md:h-64" />
+      <SocialCard social="linkedin" className="col-span-2 h-52 md:h-64" />
+      <SocialCard social="instagram" className="col-span-2 h-52 md:h-64" />
 
       <HexagonClip />
     </main>

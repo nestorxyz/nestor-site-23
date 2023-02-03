@@ -15,7 +15,7 @@ const GithubCard: React.FC<GithubCardProps> = (props) => {
       target="_blank"
       rel="noopener noreferrer"
       className={cn(
-        'px-6 py-4 relative isolate h-52 md:h-64 bg-neutral-300 overflow-hidden group rounded-lg',
+        'px-6 py-4 relative isolate bg-neutral-300 overflow-hidden group rounded-lg',
         className
       )}
     >
