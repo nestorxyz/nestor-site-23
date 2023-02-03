@@ -46,7 +46,7 @@ export default function Home() {
         }
       />
 
-      <GithubCard />
+      <GithubCard className="col-span-6" />
 
       <HexagonClip />
     </main>
