@@ -1,5 +1,7 @@
 import IntroCard from '@/components/IntroCard';
 import ProjectCard from '@/components/ProjectCard';
+import GithubCard from '@/components/GithubCard';
+import HexagonClip from '@/components/HexagonClip';
 
 export default function Home() {
   return (
@@ -43,6 +45,10 @@ export default function Home() {
           </>
         }
       />
+
+      <GithubCard />
+
+      <HexagonClip />
     </main>
   );
 }

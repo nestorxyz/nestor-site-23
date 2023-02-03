@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .hexagon-clip-path {
+    clip-path: url(#hex-shape-clip);
+    -webkit-clip-path: url(#hex-shape-clip);
+  }
+}

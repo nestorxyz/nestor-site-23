@@ -21,7 +21,7 @@ const IntroCard: React.FC<IntroCardProps> = (props) => {
         alt="Nestor"
         width={400}
         height={400}
-        className="sm:w-32 sm:h-32 h-28 w-28 rounded-full"
+        className="sm:w-32 sm:h-32 h-28 w-28 hexagon-clip-path"
       />
       <div className="text-center">
         <h1 className="sm:text-4xl text-3xl font-bold text-white">
