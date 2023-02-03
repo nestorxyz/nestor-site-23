@@ -1,13 +1,23 @@
+import Image from 'next/image';
 import IntroCard from '@/components/IntroCard';
 import ProjectCard from '@/components/ProjectCard';
 import GithubCard from '@/components/GithubCard';
 import HexagonClip from '@/components/HexagonClip';
 import SocialCard from '@/components/SocialCard';
+import HiCard from '@/components/HiCard';
 
 export default function Home() {
   return (
     <main className="grid grid-cols-6 gap-4">
       <IntroCard className="col-span-6" />
+      <Image
+        src="/assets/deku.gif"
+        alt="Deku"
+        width={300}
+        height={300}
+        className="col-span-3 rounded-lg"
+      />
+
       <ProjectCard
         className="col-span-6 bg-gradient-to-tr from-[#8241d3] via-[#6636fa] to-[#bb64ff]"
         image_path="/misfans.svg"
@@ -52,6 +62,8 @@ export default function Home() {
       <SocialCard social="twitter" className="col-span-2 h-52 md:h-64" />
       <SocialCard social="linkedin" className="col-span-2 h-52 md:h-64" />
       <SocialCard social="instagram" className="col-span-2 h-52 md:h-64" />
+
+      <HiCard className="col-span-6" />
 
       <HexagonClip />
     </main>
