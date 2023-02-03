@@ -12,7 +12,7 @@ const IntroCard: React.FC<IntroCardProps> = (props) => {
   return (
     <article
       className={cn(
-        'bg-gradient-to-b from-black to-secondary-400 flex rounded-lg p-4 gap-4 flex-col md:flex-row items-center justify-center',
+        'bg-gradient-to-b from-black via-[#FF4FCB] to-[#694fff] flex rounded-lg p-4 gap-4 flex-col md:flex-row items-center justify-center',
         className
       )}
     >
