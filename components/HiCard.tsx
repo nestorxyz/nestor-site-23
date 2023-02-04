@@ -8,14 +8,21 @@ const HiCard: React.FC<HiCardProps> = (props) => {
   const { className } = props;
 
   return (
-    <div className={cn(className)}>
-      <h2>gm ⭐</h2>
+    <div
+      className={cn(
+        'p-6 text-white space-y-2 shadow-[0_10px_20px_rgba(240,_46,_170,_0.7)] rounded-lg',
+        className
+      )}
+    >
+      <h2 className="text-xl font-semibold">gm ⭐</h2>
       <p>
-        My name is Nestor, I&apos;m a software engineer from Peru. Well, I
-        studied industrial engineering, but I&apos;ve had more fun shipping
-        products for startups and my own ventures. I&apos;m generalist, but I
-        guess my interest converge in make companies win by creating products
-        valuable to their users in a sustainable way.
+        My name is Nestor, and I&apos;m a software engineer from Peru. I studied
+        industrial engineering, but I&apos;ve found more enjoyment in shipping
+        products for startups and my own ventures.
+      </p>
+      <p>
+        I am a generalist and my interests converge in making companies win by
+        creating valuable products for their users in a sustainable way.
       </p>
       <p>
         Beyond business, I think food is amazing, have 4 dogs and use Windows
