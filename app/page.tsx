@@ -9,17 +9,17 @@ import HiCard from '@/components/HiCard';
 export default function Home() {
   return (
     <main className="grid grid-cols-6 gap-4">
-      <IntroCard className="col-span-6" />
+      <IntroCard className="col-span-6 sm:col-span-4" />
       <Image
         src="/assets/deku.gif"
         alt="Deku"
         width={300}
         height={300}
-        className="col-span-3 rounded-lg"
+        className="col-span-2 h-full object-cover rounded-lg hidden sm:block"
       />
 
       <ProjectCard
-        className="col-span-6 bg-gradient-to-tr from-[#8241d3] via-[#6636fa] to-[#bb64ff]"
+        className="col-span-6 sm:col-span-3 bg-gradient-to-tr from-[#8241d3] via-[#6636fa] to-[#bb64ff]"
         image_path="/misfans.svg"
         image_alt="MisFans"
         link="https://mis.fans"
@@ -32,7 +32,7 @@ export default function Home() {
         }
       />
       <ProjectCard
-        className="col-span-6 bg-gradient-to-tr from-[#fd7e14] via-[#FF4FCB] to-[#694fff]"
+        className="col-span-6 sm:col-span-3 bg-gradient-to-tr from-[#fd7e14] via-[#FF4FCB] to-[#694fff]"
         image_path="/agotao.svg"
         image_alt="Agotao"
         link="https://agotao.com"
@@ -43,8 +43,25 @@ export default function Home() {
           </>
         }
       />
+
+      <HiCard className="col-span-6 my-6 md:col-span-4 md:row-span-2" />
+      <SocialCard
+        social="twitter"
+        className="col-span-2 md:h-auto h-32 md:mt-6"
+      />
+      <SocialCard
+        social="linkedin"
+        className="col-span-2 md:col-span-1 h-32 md:h-auto md:mb-6"
+      />
+      <SocialCard
+        social="instagram"
+        className="col-span-2 h-32 md:h-auto md:col-span-1 md:mb-6"
+      />
+
+      <GithubCard className="col-span-6 sm:col-span-3 h-52 md:h-64" />
+
       <ProjectCard
-        className="col-span-6 bg-gradient-to-tr from-[#222222] via-[#2700FF] to-[#FF00B4]"
+        className="col-span-6 sm:col-span-3 bg-gradient-to-tr from-[#222222] via-[#2700FF] to-[#FF00B4]"
         image_path="/konto.svg"
         image_alt="Konto"
         link="https://konto.vercel.app/"
@@ -56,14 +73,6 @@ export default function Home() {
           </>
         }
       />
-
-      <GithubCard className="col-span-6 h-52 md:h-64" />
-
-      <SocialCard social="twitter" className="col-span-2 h-52 md:h-64" />
-      <SocialCard social="linkedin" className="col-span-2 h-52 md:h-64" />
-      <SocialCard social="instagram" className="col-span-2 h-52 md:h-64" />
-
-      <HiCard className="col-span-6" />
 
       <HexagonClip />
     </main>

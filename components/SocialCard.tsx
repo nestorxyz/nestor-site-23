@@ -10,9 +10,18 @@ const SocialCard: React.FC<SocialCardProps> = (props) => {
   const { className, social } = props;
 
   return (
-    <div
+    <a
+      href={
+        social === 'twitter'
+          ? 'https://twitter.com/nestoredduardo'
+          : social === 'instagram'
+          ? 'https://instagram.com/nestoredduardo'
+          : 'https://linkedin.com/in/nestoredduardo'
+      }
+      target="_blank"
+      rel="noopener noreferrer"
       className={cn(
-        'group rounded-lg flex items-center justify-center',
+        'group rounded-lg flex items-center justify-center cursor-pointer',
         social === 'twitter' && 'bg-[#1c93e4]',
         social === 'instagram' &&
           'bg-gradient-to-tr from-[#f2920e] via-[#f2005c] to-[#c901b6]',
@@ -21,11 +30,24 @@ const SocialCard: React.FC<SocialCardProps> = (props) => {
       )}
     >
       {social === 'twitter' && (
-        <FaTwitter className="text-white group-hover:scale-110" />
+        <FaTwitter
+          size={40}
+          className="text-white transition-all group-hover:scale-[1.2]"
+        />
       )}
-      {social === 'instagram' && <FaInstagram />}
-      {social === 'linkedin' && <FaLinkedin />}
-    </div>
+      {social === 'instagram' && (
+        <FaInstagram
+          size={40}
+          className="text-white transition-all group-hover:scale-[1.2]"
+        />
+      )}
+      {social === 'linkedin' && (
+        <FaLinkedin
+          size={40}
+          className="text-white transition-all group-hover:scale-[1.2]"
+        />
+      )}
+    </a>
   );
 };
 

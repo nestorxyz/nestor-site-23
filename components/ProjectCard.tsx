@@ -28,7 +28,7 @@ const ProjectCard: React.FC<ProjectCardProps> = (props) => {
         alt={image_alt}
         width={400}
         height={400}
-        className="h-8 mb-6"
+        className="h-8 mb-6 mx-auto"
       />
       <p>{content}</p>
     </a>

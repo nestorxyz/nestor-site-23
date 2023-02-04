@@ -54,6 +54,9 @@ module.exports = {
       fontFamily: {
         heebo: ['var(--font-heebo)', ...defaultTheme.fontFamily.mono],
       },
+      backgroundImage: {
+        'agotao-pattern': "url('/assets/agotao-gradient.png')",
+      },
     },
   },
   plugins: [],
