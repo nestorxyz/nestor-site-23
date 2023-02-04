@@ -5,7 +5,7 @@ interface HeadTagsProps {
 }
 
 const HeadTags: React.FC<HeadTagsProps> = (props) => {
-  const { title, preview_url, pathname } = props;
+  const { title, preview_url = 'nezztor.png', pathname } = props;
 
   return (
     <>
