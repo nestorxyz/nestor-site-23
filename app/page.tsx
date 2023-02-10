@@ -1,14 +1,26 @@
 import Image from 'next/image';
-import HexagonClip from '@/components/HexagonClip';
+import { Alchemy, Network } from 'alchemy-sdk';
 
+import { constants } from '@/lib/utils';
+
+import HexagonClip from '@/components/HexagonClip';
 import IntroCard from './components/IntroCard';
 import ProjectCard from './components/ProjectCard';
 import GithubCard from './components/GithubCard';
 import SocialCard from './components/SocialCard';
 import HiCard from './components/HiCard';
 import MoreStuffCard from './components/MoreStuffCard';
+import MyNFTs from './components/MyNFTs';
 
-export default function Home() {
+const config = {
+  apiKey: process.env.ALCHEMY_API_KEY,
+  network: Network.MATIC_MAINNET,
+};
+const alchemy = new Alchemy(config);
+
+export default async function Home() {
+  const myNFTs = await alchemy.nft.getNftsForOwner(constants.ETH_ADDRESS);
+
   return (
     <main className="bg-black min-h-screen w-full">
       <div className="mx-auto max-w-4xl px-4 lg:px-0 py-5 md:py-10 flex flex-col gap-10">
@@ -79,6 +91,8 @@ export default function Home() {
           />
 
           <MoreStuffCard className="col-span-6 sm:col-span-3 h-32" />
+
+          <MyNFTs myNFTs={myNFTs} className="col-span-6 sm:col-span-3" />
 
           <HexagonClip />
         </div>
