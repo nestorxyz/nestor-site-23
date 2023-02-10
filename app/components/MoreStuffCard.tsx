@@ -13,7 +13,7 @@ const MoreStuffCard: React.FC<MoreStuffCardProps> = (props) => {
     <Link
       href="/more-stuff"
       className={cn(
-        'flex hover:scale-95 transition-all duration-700 justify-center items-center relative rounded-lg',
+        'flex hover:scale-95 overflow-hidden transition-all duration-700 justify-center items-center relative rounded-lg',
         className
       )}
     >
