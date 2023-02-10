@@ -78,7 +78,7 @@ export default function Home() {
             }
           />
 
-          <MoreStuffCard className="col-span-6 sm:col-span-3" />
+          <MoreStuffCard className="col-span-6 sm:col-span-3 h-32" />
 
           <HexagonClip />
         </div>
