@@ -10,7 +10,7 @@ import GithubCard from './components/GithubCard';
 import SocialCard from './components/SocialCard';
 import HiCard from './components/HiCard';
 import MoreStuffCard from './components/MoreStuffCard';
-import MyNFTs from './components/MyNFTs';
+import MyNFTs from './components/NFTs';
 
 const config = {
   apiKey: process.env.ALCHEMY_API_KEY,
@@ -90,9 +90,9 @@ export default async function Home() {
             }
           />
 
-          <MoreStuffCard className="col-span-6 sm:col-span-3 h-32" />
-
           <MyNFTs myNFTs={myNFTs} className="col-span-6 sm:col-span-3" />
+
+          <MoreStuffCard className="col-span-6 sm:col-span-3 h-32 md:h-64" />
 
           <HexagonClip />
         </div>
