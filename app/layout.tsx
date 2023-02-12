@@ -1,6 +1,7 @@
 import '@/styles/globals.css';
 import { Heebo } from '@next/font/google';
 import { AnalyticsWrapper } from '@/components/Analytics';
+import { Toaster } from '@/components/toaster';
 
 const heebo = Heebo({
   subsets: ['latin'],
@@ -19,6 +20,7 @@ export default function RootLayout({
         {children}
         <AnalyticsWrapper />
       </body>
+      <Toaster />
     </html>
   );
 }

@@ -2,10 +2,11 @@
 
 import { useState } from 'react';
 import { OwnedNftsResponse } from 'alchemy-sdk';
-import { CircleEllipsis, CircleEllipsisIcon } from 'lucide-react';
+import { CircleEllipsis } from 'lucide-react';
 import { BsFillArrowUpRightSquareFill } from 'react-icons/bs';
 
 import { cn } from '@/lib/utils';
+import { useToast } from '@/hooks/use-toast';
 
 import Modal from '@/components/Modal';
 import {
@@ -16,66 +17,11 @@ import {
 } from '@/components/dropdown-menu';
 import { Button } from '@/components/button';
 
-/*
-{
-  contract: {
-    address: '0x33efef36816d62341d17b87a19c555b123f92034',
-    name: 'CRYPTOTALKS',
-    symbol: 'PLTZ',
-    totalSupply: '198',
-    tokenType: 'ERC721',
-    openSea: {
-      floorPrice: undefined,
-      collectionName: undefined,
-      safelistRequestStatus: undefined,
-      imageUrl: undefined,
-      description: undefined,
-      externalUrl: undefined,
-      twitterUsername: undefined,
-      discordUrl: undefined,
-      lastIngestedAt: '2023-02-11T07:22:51.000Z'
-    },
-    contractDeployer: '0x27225be8e569d7f980fe6ce655c8a5bc82f94f95',
-    deployedBlockNumber: 26315425
-  },
-  tokenId: '175',
-  tokenType: 'ERC721',
-  title: 'CRYPTOTALKS #175',
-  description: 'This Platzi badge is a digital collectible item created as an NFT (non-fungible token) powered by the blockchain.',
-  timeLastUpdated: '2023-01-18T00:46:24.227Z',
-  metadataError: undefined,
-  rawMetadata: {
-    date: 1648096077020,
-    image: 'ipfs://QmQvxoTz7diEGm44MLqBigZkWwLRGJCF5ndvP2Fd6E1TSf/175.png',
-    dna: 'c8bce0e05a9c5bbba0d3f556ce6e50d5a5fcee76',
-    name: 'CRYPTOTALKS #175',
-    description: 'This Platzi badge is a digital collectible item created as an NFT (non-fungible token) powered by the blockchain.',
-    edition: 175,
-    attributes: [ [Object], [Object], [Object], [Object], [Object] ],
-    compiler: 'GNDX'
-  },
-  tokenUri: {
-    gateway: 'https://alchemy.mypinata.cloud/ipfs/QmTm9YkWrdj6Nip6LTmDWpSsnK99uXfKG1p5csNmrQ8XLr/175.json',
-    raw: 'https://gateway.pinata.cloud/ipfs/QmTm9YkWrdj6Nip6LTmDWpSsnK99uXfKG1p5csNmrQ8XLr/175.json'
-  },
-  media: [
-    {
-      gateway: 'https://nft-cdn.alchemy.com/matic-mainnet/8e9da559b46f4b0894485e80216a0adf',
-      thumbnail: 'https://res.cloudinary.com/alchemyapi/image/upload/thumbnailv2/matic-mainnet/8e9da559b46f4b0894485e80216a0adf',
-      raw: 'ipfs://QmQvxoTz7diEGm44MLqBigZkWwLRGJCF5ndvP2Fd6E1TSf/175.png',
-      format: 'png',
-      bytes: 51477
-    }
-  ],
-  spamInfo: undefined,
-  balance: 1
-} 
-*/
-
 interface NFTModal {
   media: string;
   image: boolean;
   title: string;
+  tokenId: string;
   contract_address: string;
   description: string;
   attributes?: Record<string, unknown>[];
@@ -101,7 +47,7 @@ const MyNFTs: React.FC<MyNFTsProps> = (props) => {
   const [open, setOpen] = useState(false);
   const [nft, setNft] = useState<NFTModal>();
 
-  console.log(myNFTs.ownedNfts[0]);
+  const { toast } = useToast();
 
   return (
     <>
@@ -131,6 +77,7 @@ const MyNFTs: React.FC<MyNFTsProps> = (props) => {
                     media: nft.media[0].raw,
                     image,
                     title: nft.title,
+                    tokenId: nft.tokenId,
                     contract_address: nft.contract.address,
                     description: nft.description,
                     attributes: nft.rawMetadata?.attributes,
@@ -161,7 +108,7 @@ const MyNFTs: React.FC<MyNFTsProps> = (props) => {
 
       <Modal showModal={open} setShowModal={setOpen}>
         {nft && (
-          <div className="bg-black p-4 sm:rounded-xl sm:p-6">
+          <div className="bg-black p-4 sm:rounded-xl sm:p-6 max-h-[95vh] overflow-y-auto">
             <div className="w-full max-w-sm mx-auto space-y-6">
               {nft.image ? (
                 // eslint-disable-next-line @next/next/no-img-element
@@ -186,8 +133,28 @@ const MyNFTs: React.FC<MyNFTsProps> = (props) => {
                     <CircleEllipsis className="text-pink-400 h-6 w-6" />
                   </DropdownMenuTrigger>
                   <DropdownMenuContent>
-                    <DropdownMenuItem>Copy token ID</DropdownMenuItem>
-                    <DropdownMenuItem>View on PolygonScan</DropdownMenuItem>
+                    <DropdownMenuItem
+                      onClick={() => {
+                        navigator.clipboard.writeText(nft.tokenId);
+                        toast({
+                          title: '✅ Copied',
+                          description: 'Token ID copied to clipboard',
+                          duration: 3000,
+                        });
+                      }}
+                    >
+                      Copy token ID
+                    </DropdownMenuItem>
+                    <DropdownMenuItem
+                      onClick={() => {
+                        window.open(
+                          `https://polygonscan.com/token/${nft.contract_address}?a=${nft.tokenId}`,
+                          '_blank'
+                        );
+                      }}
+                    >
+                      View on PolygonScan
+                    </DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
               </div>
@@ -195,26 +162,50 @@ const MyNFTs: React.FC<MyNFTsProps> = (props) => {
               <Button
                 size="lg"
                 className="rounded-full w-full hover:bg-pink-600 active:scale-95 transition-all bg-pink-500"
+                onClick={() => {
+                  window.open(
+                    `https://opensea.io/assets/matic/${nft.contract_address}/${nft.tokenId}`,
+                    '_blank'
+                  );
+                }}
               >
                 <BsFillArrowUpRightSquareFill className="mr-2" />
                 View on OpenSea
               </Button>
 
-              <div>
-                <h3>Description</h3>
-                <p>{nft.description}</p>
+              <div className="text-white space-y-3">
+                <h3 className="font-semibold text-lg">📖 Description</h3>
+                <p className="text-black-300">{nft.description}</p>
               </div>
 
               {nft.attributes && (
-                <div>
-                  <h3>Properties</h3>
+                <div className="text-white space-y-3">
+                  <h3 className="font-semibold text-lg">🎨 Properties</h3>
                   <div className="flex flex-wrap gap-2">
-                    {nft.attributes.map((attribute, index) => (
-                      <div
-                        key={index}
-                        className="bg-gray-800 rounded-full px-2 py-1 text-sm text-white"
-                      ></div>
-                    ))}
+                    {nft.attributes.map((attribute, index) => {
+                      if (
+                        !(
+                          attribute.trait_type &&
+                          typeof attribute.trait_type === 'string'
+                        ) ||
+                        !(
+                          attribute.value && typeof attribute.value === 'string'
+                        )
+                      )
+                        return null;
+
+                      return (
+                        <div
+                          key={index}
+                          className="rounded-xl text-sm font-medium px-3 py-1 border-2 border-pink-500"
+                        >
+                          <p className="uppercase text-pink-500">
+                            {attribute.trait_type}
+                          </p>
+                          <p className="text-white">{attribute.value}</p>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               )}
