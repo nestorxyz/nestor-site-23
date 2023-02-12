@@ -7,4 +7,12 @@
     clip-path: url(#hex-shape-clip);
     -webkit-clip-path: url(#hex-shape-clip);
   }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
 }

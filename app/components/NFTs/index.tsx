@@ -108,7 +108,7 @@ const MyNFTs: React.FC<MyNFTsProps> = (props) => {
 
       <Modal showModal={open} setShowModal={setOpen}>
         {nft && (
-          <div className="bg-black p-4 sm:rounded-xl sm:p-6 max-h-[95vh] overflow-y-auto">
+          <div className="bg-black p-4 no-scrollbar sm:rounded-xl sm:p-6 max-h-[95vh] overflow-y-auto">
             <div className="w-full max-w-sm mx-auto space-y-6">
               {nft.image ? (
                 // eslint-disable-next-line @next/next/no-img-element
