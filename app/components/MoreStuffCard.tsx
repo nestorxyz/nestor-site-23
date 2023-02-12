@@ -1,5 +1,7 @@
+'use client';
+
 import Image from 'next/image';
-import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { cn } from '@/lib/utils';
 
 interface MoreStuffCardProps {
@@ -9,13 +11,18 @@ interface MoreStuffCardProps {
 const MoreStuffCard: React.FC<MoreStuffCardProps> = (props) => {
   const { className } = props;
 
+  const router = useRouter();
+
   return (
-    <Link
-      href="/more-stuff"
+    <button
       className={cn(
         'flex hover:scale-95 overflow-hidden transition-all duration-700 justify-center items-center relative rounded-lg',
         className
       )}
+      onClick={() => {
+        router.push('/more-stuff');
+        window.scrollTo(0, 0);
+      }}
     >
       <Image
         src="/assets/training.gif"
@@ -30,7 +37,7 @@ const MoreStuffCard: React.FC<MoreStuffCardProps> = (props) => {
           My road zero to sth
         </p>
       </div>
-    </Link>
+    </button>
   );
 };
 
