@@ -11,7 +11,7 @@ const GithubCard: React.FC<GithubCardProps> = (props) => {
 
   return (
     <a
-      href="https://github.com/nestoredduardo"
+      href="https://github.com/nestorxyz"
       target="_blank"
       rel="noopener noreferrer"
       className={cn(
