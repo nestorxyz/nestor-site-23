@@ -16,18 +16,15 @@ const HiCard: React.FC<HiCardProps> = (props) => {
     >
       <h2 className="text-xl font-semibold">gm ⭐</h2>
       <p>
-        My name is Nestor, and I&apos;m a software engineer from Peru. I studied
-        industrial engineering, but I&apos;ve found more enjoyment in shipping
-        products for startups and my own ventures.
+        here Nestor. i&apos;m a builder, former industrial engineer who found
+        more enjoyment in shipping products for startups and my own ventures.
       </p>
       <p>
-        I am a generalist and my interests converge in making companies win by
-        creating valuable products for their users in a sustainable way.
+        i go all in at early-stage startups. what that means? ownership,
+        autonomy, working on something 1000/hr and have fun 🚢 things with cool
+        people.
       </p>
-      <p>
-        Beyond business, I think food is amazing, have 4 dogs and use Windows
-        haha.
-      </p>
+      <p>beyond building. i ❤️ food, have 4 dogs and use Windows</p>
     </div>
   );
 };
