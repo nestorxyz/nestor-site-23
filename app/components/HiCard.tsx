@@ -16,8 +16,8 @@ const HiCard: React.FC<HiCardProps> = (props) => {
     >
       <h2 className="text-xl font-semibold">gm ⭐</h2>
       <p>
-        here Nestor. i&apos;m a builder, former industrial engineer who found
-        more enjoyment in shipping products for startups and my own ventures.
+        here Nestor 👉 builder, former industrial engineer who found more
+        enjoyment in shipping products for startups and my own ventures.
       </p>
       <p>
         i go all in at early-stage startups. what that means? ownership,

@@ -25,10 +25,10 @@ const IntroCard: React.FC<IntroCardProps> = (props) => {
       />
       <div className="text-center relative">
         <h1 className="sm:text-4xl text-3xl font-bold text-white">
-          Hi! I&apos;m Nestor
+          hi! i&apos;m Nestor 👋
         </h1>
         <p className="text-lg sm:text-xl text-black-50">
-          Software Engineer • Founder • Geek
+          Software Engineer • Builder • Geek
         </p>
         <p className="font-semibold text-lg sm:opacity-0 text-[#19fb9b] right-1/2 whitespace-nowrap sm:translate-x-1/2 sm:absolute sm:translate-y-6 transition-all sm:group-hover:translate-y-2 sm:group-hover:opacity-100">
           I am a self-starter who ship products

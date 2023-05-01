@@ -19,7 +19,8 @@ const HeadTags: React.FC<HeadTagsProps> = (props) => {
       />
       <meta
         name="description"
-        content="hi i'm Nestor, a self-starter who loves shipping products!!"
+        content="here Nestor 👉 builder, former industrial engineer who found more
+        enjoyment in shipping products for startups and my own ventures."
       />
       <meta name="theme-color" content="#ffc6ff" />
       <meta property="og:type" content="website" />
@@ -30,11 +31,12 @@ const HeadTags: React.FC<HeadTagsProps> = (props) => {
       />
       <meta
         property="og:description"
-        content="hi i'm Nestor, a self-starter who loves shipping products!!"
+        content="here Nestor 👉 builder, former industrial engineer who found more
+        enjoyment in shipping products for startups and my own ventures."
       />
       <meta
         property="og:image"
-        content={`https://saku.zone/assets/preview/${preview_url}`}
+        content={`https://nestormamani.com/assets/preview/${preview_url}`}
       />
       <meta property="twitter:card" content="summary_large_image" />
       <meta
@@ -47,7 +49,8 @@ const HeadTags: React.FC<HeadTagsProps> = (props) => {
       />
       <meta
         property="twitter:description"
-        content="hi i'm Nestor, a self-starter who loves shipping products!!"
+        content="here Nestor 👉 builder, former industrial engineer who found more
+        enjoyment in shipping products for startups and my own ventures."
       />
       <meta
         property="twitter:image"
