@@ -54,7 +54,7 @@ export default async function Home() {
             link="https://agotao.com"
             content={
               <>
-                I am the founder of <b>Agotao</b>, offering APIs and
+                I was the founder of <b>Agotao</b>, offering APIs and
                 integrations to accept payments and send payouts in Peru.
               </>
             }
