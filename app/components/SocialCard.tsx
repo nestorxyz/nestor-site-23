@@ -16,7 +16,7 @@ const SocialCard: React.FC<SocialCardProps> = (props) => {
           ? 'https://twitter.com/nestorxyz'
           : social === 'instagram'
           ? 'https://instagram.com/nestorxyz'
-          : 'https://linkedin.com/in/nestoredduardo'
+          : 'https://linkedin.com/in/nestorxyz'
       }
       target="_blank"
       rel="noopener noreferrer"
