@@ -7,6 +7,18 @@ interface Stuff {
 
 const oldStuff: Array<Stuff> = [
   {
+    title: '🧊 Ice',
+    image_path: '/assets/projects/iceSignature.png',
+    url: 'https://github.com/nestorxyz/ice-signature',
+    year: 2023,
+  },
+  {
+    title: 'Cesio',
+    image_path: '/assets/projects/cesio.png',
+    url: 'https://cesio-web.vercel.app/',
+    year: 2023,
+  },
+  {
     title: 'Web3Blocks',
     image_path: '/assets/projects/web3Blocks.webp',
     url: 'https://web3-blocks.vercel.app/',
