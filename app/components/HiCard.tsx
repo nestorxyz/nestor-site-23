@@ -20,11 +20,12 @@ const HiCard: React.FC<HiCardProps> = (props) => {
         enjoyment in shipping products for startups and my own ventures.
       </p>
       <p>
-        i go all in at early-stage startups. what that means? ownership,
-        autonomy, working on something 1000/hr and have fun 🚢 things with cool
-        people.
+        i go all in at early-stage startups for the ownership, autonomy, working
+        on something 1000/hr and have fun 🚢 things with cool people.
       </p>
-      <p>beyond building. i ❤️ food, have 4 dogs and use Windows</p>
+      <p>
+        beyond building. i ❤️ food, have 4 dogs and use <s>Windows</s> macOS
+      </p>
     </div>
   );
 };

@@ -28,10 +28,10 @@ const IntroCard: React.FC<IntroCardProps> = (props) => {
           hi! i&apos;m Nestor 👋
         </h1>
         <p className="text-lg sm:text-xl text-black-50">
-          Software Engineer • Builder • Geek
+          software engineer • builder • geek
         </p>
         <p className="font-semibold text-lg sm:opacity-0 text-[#19fb9b] right-1/2 whitespace-nowrap sm:translate-x-1/2 sm:absolute sm:translate-y-6 transition-all sm:group-hover:translate-y-2 sm:group-hover:opacity-100">
-          I am a self-starter who ship products
+          i am a self-starter who ship products
         </p>
       </div>
     </article>
