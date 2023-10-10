@@ -11,6 +11,7 @@ import SocialCard from './components/SocialCard';
 import HiCard from './components/HiCard';
 import MoreStuffCard from './components/MoreStuffCard';
 import MyNFTs from './components/NFTs';
+import BlogCard from './components/BlogCard';
 
 const config = {
   apiKey: process.env.ALCHEMY_API_KEY,
@@ -76,6 +77,10 @@ export default async function Home() {
 
           <GithubCard className="col-span-6 sm:col-span-3 h-52 md:h-64" />
 
+          <BlogCard className="col-span-6 sm:col-span-3 h-52 md:h-64" />
+
+          <MoreStuffCard className="col-span-6 sm:col-span-3 h-32 md:h-64" />
+
           <ProjectCard
             className="col-span-6 sm:col-span-3 bg-gradient-to-tr from-[#222222] via-[#2700FF] to-[#FF00B4]"
             image_path="/konto.svg"
@@ -91,8 +96,6 @@ export default async function Home() {
           />
 
           <MyNFTs myNFTs={myNFTs} className="col-span-6 sm:col-span-3" />
-
-          <MoreStuffCard className="col-span-6 sm:col-span-3 h-32 md:h-64" />
 
           <HexagonClip />
         </div>
