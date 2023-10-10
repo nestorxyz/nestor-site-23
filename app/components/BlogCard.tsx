@@ -27,7 +27,7 @@ const BlogCard: React.FC<BlogCardProps> = (props) => {
           className="absolute inset-0 z-0 w-full h-full object-cover"
         />
         <div className="bg-black opacity-70 z-10 absolute inset-0 w-full h-full"></div>
-        <p className="text-4xl text-center z-20 font-extrabold">
+        <p className="text-3xl md:text-4xl text-center z-20 font-extrabold">
           I write at{' '}
           <a
             target="_blank"
